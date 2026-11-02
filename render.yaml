@@ -10,7 +10,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: CLIENT_ORIGIN
-        value: https://hamsini-ai-mystery-room.onrender.com
+        sync: false
       - key: MOCK_AI
         value: true
       - key: JWT_SECRET
