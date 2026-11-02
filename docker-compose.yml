@@ -1,0 +1,29 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mystery-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+  app:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/ai-mystery-room
+      CLIENT_ORIGIN: http://localhost:5173
+      MOCK_AI: "true"
+    ports:
+      - "4000:4000"
+      - "5173:5173"
+    depends_on:
+      mongo:
+        condition: service_healthy
+volumes:
+  mystery-data:

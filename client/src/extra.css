@@ -1,0 +1,463 @@
+.share-page,
+.auth-page {
+  min-height: 100vh;
+  padding: 24px clamp(20px, 8vw, 120px);
+  display: flex;
+  flex-direction: column;
+}
+.share-card,
+.auth-card {
+  width: min(520px, 100%);
+  margin: auto;
+  border: 1px solid #484334;
+  background: linear-gradient(145deg, #1e1f1a, #171814);
+  padding: 34px;
+  box-shadow: 0 24px 90px #0007;
+}
+.share-card h1,
+.auth-card h1 {
+  font:
+    500 34px "Playfair Display",
+    serif;
+  margin: 10px 0 24px;
+}
+.share-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-block: 1px solid #393a32;
+  color: #a3a194;
+  font:
+    10px "DM Mono",
+    monospace;
+}
+.share-stat b {
+  font:
+    28px "DM Mono",
+    monospace;
+  color: var(--gold);
+}
+.share-stat small {
+  font-size: 11px;
+  color: #828277;
+}
+.share-verdict {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b7c5a9;
+  font-size: 13px;
+  padding: 10px 0 18px;
+}
+.share-card .primary {
+  width: 100%;
+}
+.fiction-note {
+  margin-top: 27px;
+  text-align: center;
+  color: #74756a;
+  font:
+    8px "DM Mono",
+    monospace;
+  letter-spacing: 0.1em;
+}
+.auth-card > p {
+  font-size: 12px;
+  color: #a1a197;
+  margin: -11px 0 22px;
+}
+.auth-card label {
+  display: block;
+  margin: 14px 0;
+  color: #a49c87;
+  font:
+    9px "DM Mono",
+    monospace;
+  letter-spacing: 0.09em;
+}
+.auth-card input {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 11px 12px;
+  background: #131410;
+  border: 1px solid #393a32;
+  color: #eee;
+  outline: 0;
+  font:
+    13px "DM Sans",
+    sans-serif;
+}
+.auth-card input:focus {
+  border-color: #8e794f;
+}
+.auth-switch {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
+  color: #c9b27c;
+  font-size: 11px;
+}
+.progress-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 18;
+  background: #0c0d0bf0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.progress-card {
+  width: min(440px, 100%);
+  border: 1px solid #544a35;
+  background: #1b1c17;
+  padding: 32px;
+  box-shadow: 0 25px 90px #0009;
+}
+.progress-card h2 {
+  font:
+    500 29px "Playfair Display",
+    serif;
+  margin: 10px 0;
+}
+.progress-card p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #a4a399;
+}
+.progress-track {
+  height: 4px;
+  background: #37382f;
+  margin: 24px 0 10px;
+}
+.progress-track span {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  transition: width 0.5s;
+}
+.progress-foot {
+  display: flex;
+  justify-content: space-between;
+  color: #88897e;
+  font:
+    9px "DM Mono",
+    monospace;
+}
+.progress-foot b {
+  color: var(--gold);
+}
+.progress-card .spinner {
+  margin: 23px auto 0;
+}
+.asset-img,
+.frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.frame img {
+  height: auto;
+  max-height: 300px;
+  margin-bottom: 10px;
+}
+.evidence-thumb .asset-img {
+  position: absolute;
+  inset: 0;
+}
+.home-archive {
+  position: fixed;
+  right: clamp(18px, 6vw, 90px);
+  top: 78px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #383931;
+  background: #191a16ef;
+  padding: 8px 10px;
+  color: #aaa99e;
+  font:
+    9px "DM Mono",
+    monospace;
+  letter-spacing: 0.08em;
+}
+.home-archive:hover {
+  color: var(--gold);
+  border-color: #84734f;
+}
+.history-page {
+  min-height: 100vh;
+}
+.history-shell {
+  max-width: 860px;
+  margin: 72px auto;
+  padding: 0 24px;
+}
+.history-shell > h1 {
+  font:
+    500 42px "Playfair Display",
+    serif;
+  margin: 8px 0;
+}
+.history-shell > p {
+  font-size: 12px;
+  color: #9b9c91;
+}
+.history-list {
+  margin-top: 28px;
+  border-top: 1px solid #37382f;
+}
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 14px;
+  border-bottom: 1px solid #37382f;
+  background: #191a16;
+}
+.history-item:hover {
+  background: #20211b;
+}
+.history-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  border: 1px solid #514a36;
+}
+.history-info {
+  flex: 1;
+  min-width: 0;
+}
+.history-info b {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font:
+    500 15px "Playfair Display",
+    serif;
+}
+.history-info small {
+  display: block;
+  margin-top: 5px;
+  color: #85867b;
+  font:
+    9px "DM Mono",
+    monospace;
+}
+.history-status {
+  color: #b9a36e;
+  font:
+    9px "DM Mono",
+    monospace;
+}
+.history-status.resolved {
+  color: #a7bd91;
+}
+.history-score {
+  font:
+    13px "DM Mono",
+    monospace;
+  color: var(--gold);
+}
+.history-item > svg:last-child {
+  color: #77796e;
+}
+.empty-history {
+  margin-top: 32px;
+  text-align: center;
+  padding: 44px 18px;
+  border: 1px solid #393a32;
+  background: #191a16;
+  color: #8f907f;
+}
+.empty-history h2 {
+  font:
+    500 23px "Playfair Display",
+    serif;
+  color: #e5e2d8;
+}
+.empty-history p {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.history-shell > .fiction-note {
+  margin-top: 42px;
+}
+.score-breakdown {
+  display: grid;
+  gap: 4px;
+  margin-top: 8px;
+  text-align: left;
+}
+.score-breakdown span {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: #85857b;
+  font:
+    8px "DM Mono",
+    monospace;
+  letter-spacing: 0.04em;
+}
+.score-breakdown span b {
+  font:
+    9px "DM Mono",
+    monospace;
+  color: #d0c9b5;
+}
+.score-breakdown em {
+  max-width: 230px;
+  margin-top: 4px;
+  color: #9d9d90;
+  font:
+    italic 10px/1.45 "Playfair Display",
+    serif;
+}
+.timeline-access {
+  position: fixed;
+  right: 20px;
+  bottom: 22px;
+  z-index: 9;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 11px 13px;
+  background: #b79a62;
+  color: #171811;
+  border: 1px solid #d2b777;
+  font:
+    9px "DM Mono",
+    monospace;
+  box-shadow: 0 5px 24px #0008;
+}
+.timeline-page {
+  min-height: 100vh;
+}
+.timeline-shell {
+  max-width: 860px;
+  margin: 55px auto;
+  padding: 0 24px;
+}
+.timeline-shell h1 {
+  font:
+    500 37px "Playfair Display",
+    serif;
+  margin: 8px 0;
+}
+.timeline-shell > p {
+  font-size: 12px;
+  color: #99998e;
+  margin-bottom: 28px;
+}
+.timeline-list {
+  border-left: 1px solid #685a3b;
+  margin-left: 12px;
+  padding: 2px 0 2px 23px;
+  display: grid;
+  gap: 8px;
+}
+.timeline-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  padding: 13px;
+  background: #1a1b17;
+  border: 1px solid #34352e;
+}
+.timeline-item:hover {
+  border-color: #786947;
+  background: #20211b;
+}
+.timeline-node {
+  position: absolute;
+  left: -31px;
+  top: 16px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #26251e;
+  border: 1px solid #84734f;
+  color: var(--gold);
+  font:
+    8px "DM Mono",
+    monospace;
+}
+.timeline-time {
+  min-width: 145px;
+  color: #c7ac70;
+  font:
+    9px "DM Mono",
+    monospace;
+}
+.timeline-content {
+  flex: 1;
+  min-width: 0;
+}
+.timeline-content b {
+  display: block;
+  color: #e3e0d6;
+  font:
+    500 14px "Playfair Display",
+    serif;
+}
+.timeline-content small {
+  display: block;
+  color: #8e8f84;
+  margin-top: 4px;
+  font:
+    8px "DM Mono",
+    monospace;
+}
+.timeline-content em {
+  display: block;
+  color: #9b9b90;
+  font:
+    italic 11px/1.5 "Playfair Display",
+    serif;
+  margin-top: 5px;
+}
+.timeline-item > svg {
+  color: #7c7d71;
+}
+@media (max-width: 600px) {
+  .timeline-shell {
+    margin: 35px auto;
+    padding: 0 16px;
+  }
+  .timeline-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+  .timeline-time {
+    min-width: calc(100% - 40px);
+    margin-left: 25px;
+  }
+  .timeline-node {
+    left: -31px;
+  }
+  .timeline-content {
+    margin-left: 25px;
+    flex: 0 0 calc(100% - 40px);
+  }
+  .timeline-item > svg {
+    position: absolute;
+    right: 12px;
+    top: 14px;
+  }
+  .timeline-access {
+    right: 12px;
+    bottom: 12px;
+  }
+}
