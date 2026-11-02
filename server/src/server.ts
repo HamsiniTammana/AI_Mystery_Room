@@ -453,6 +453,11 @@ app.get("/api/v1/share/:shareId", (req, res) => {
     verdict: c.attempts.some((a) => a.correct) ? "Solved" : "Case closed",
   });
 });
+if (env.NODE_ENV === "production") {
+  const clientDist = path.resolve(process.cwd(), "client", "dist");
+  app.use(express.static(clientDist));
+  app.get("*", (_req, res) => res.sendFile(path.join(clientDist, "index.html")));
+}
 app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error(err);
   res

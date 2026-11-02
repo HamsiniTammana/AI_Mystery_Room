@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: hamsini-ai-mystery-room
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_ORIGIN
+        value: https://hamsini-ai-mystery-room.onrender.com
+      - key: MOCK_AI
+        value: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: COOKIE_SECRET
+        generateValue: true
